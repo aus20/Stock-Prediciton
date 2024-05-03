@@ -8,7 +8,8 @@ from keras.layers import Dense, LSTM
 import yfinance as yf
 
 # Taking stock data using yfinance library
-data = yf.download('ASELS.IS', start='2016-01-01', end='2024-01-05')
+ticker = 'ASELS.IS'
+data = yf.download(ticker, start='2016-01-01', end='2024-01-05')
 
 # Close column of stock data
 plt.figure(figsize=(16, 8))
@@ -109,5 +110,5 @@ prediction_price = scaler.inverse_transform(prediction_price)
 print("Prediction:", prediction_price)
 
 # Fetching the actual stock price for the next day to compare with our prediction
-aselsan = yf.download('ASELS.IS', start='2023-01-05', end='2024-01-06')
+aselsan = yf.download(ticker, start='2024-01-05', end='2024-01-06')
 print("Actual Price:", aselsan['Close'])
