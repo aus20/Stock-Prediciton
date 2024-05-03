@@ -62,7 +62,7 @@ model.add(Dense(1))
 model.compile(optimizer='adam', loss='mean_squared_error')
 
 # Training the model using the training data
-model.fit(x_train, y_train, batch_size=1, epochs=1)
+model.fit(x_train, y_train, batch_size=1, epochs=4)
 
 # Preparing the test dataset
 testing_data = scaled_data[training_data_len - 60:, :]
